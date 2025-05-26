@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Java Collections Framework</title>
+</head>
+<body>
+
+  <h2>📗 12. Collections Framework</h2>
+
+  <p>The Java Collections Framework provides a set of interfaces and classes to store and manipulate groups of data as a single unit.</p>
+
+  <h3>🔷 List Interface</h3>
+
+  <h4>➡️ ArrayList</h4>
+  <p>Resizable array, allows duplicates, maintains insertion order.</p>
+  <div class="code-block">
+    <pre><code>import java.util.ArrayList;
+
+public class ArrayListExample {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Java");
+        list.add("Python");
+        list.add("Java");
+        System.out.println(list);
+    }
+}</code></pre>
+  </div>
+
+  <h4>➡️ LinkedList</h4>
+  <p>Doubly linked list implementation, good for frequent insertion/deletion.</p>
+  <div class="code-block">
+    <pre><code>import java.util.LinkedList;
+
+public class LinkedListExample {
+    public static void main(String[] args) {
+        LinkedList<String> list = new LinkedList<>();
+        list.add("Apple");
+        list.add("Banana");
+        System.out.println(list);
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔷 Set Interface</h3>
+
+  <h4>➡️ HashSet</h4>
+  <p>Stores unique elements, does not maintain order.</p>
+  <div class="code-block">
+    <pre><code>import java.util.HashSet;
+
+public class HashSetExample {
+    public static void main(String[] args) {
+        HashSet<String> set = new HashSet<>();
+        set.add("C++");
+        set.add("Java");
+        set.add("C++");
+        System.out.println(set);
+    }
+}</code></pre>
+  </div>
+
+  <h4>➡️ TreeSet</h4>
+  <p>Stores unique elements in sorted order.</p>
+  <div class="code-block">
+    <pre><code>import java.util.TreeSet;
+
+public class TreeSetExample {
+    public static void main(String[] args) {
+        TreeSet<Integer> ts = new TreeSet<>();
+        ts.add(5);
+        ts.add(2);
+        ts.add(8);
+        System.out.println(ts);
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔷 Map Interface</h3>
+
+  <h4>➡️ HashMap</h4>
+  <p>Stores key-value pairs, keys are unique, allows one null key.</p>
+  <div class="code-block">
+    <pre><code>import java.util.HashMap;
+
+public class HashMapExample {
+    public static void main(String[] args) {
+        HashMap<Integer, String> map = new HashMap<>();
+        map.put(1, "Java");
+        map.put(2, "C++");
+        map.put(1, "Python");
+        System.out.println(map);
+    }
+}</code></pre>
+  </div>
+
+  <h4>➡️ TreeMap</h4>
+  <p>Sorted map based on keys.</p>
+  <div class="code-block">
+    <pre><code>import java.util.TreeMap;
+
+public class TreeMapExample {
+    public static void main(String[] args) {
+        TreeMap<String, Integer> map = new TreeMap<>();
+        map.put("Banana", 30);
+        map.put("Apple", 50);
+        System.out.println(map);
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔷 Iterator and ListIterator</h3>
+  <p>Used to traverse collections.</p>
+  <div class="code-block">
+    <pre><code>import java.util.*;
+
+public class IteratorExample {
+    public static void main(String[] args) {
+        ArrayList&lt;String&gt; list = new ArrayList<>();
+        list.add("A");
+        list.add("B");
+        Iterator&lt;String&gt; it = list.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔷 Comparable vs Comparator</h3>
+  <table>
+    <tr><th>Aspect</th><th>Comparable</th><th>Comparator</th></tr>
+    <tr><td>Package</td><td>java.lang</td><td>java.util</td></tr>
+    <tr><td>Method</td><td>compareTo()</td><td>compare()</td></tr>
+    <tr><td>Used For</td><td>Default sorting</td><td>Custom sorting</td></tr>
+    <tr><td>Modification</td><td>Inside the class</td><td>Separate class</td></tr>
+  </table>
+
+  <h3>✍️ Practice Questions</h3>
+  <ul>
+    <li>Write a program to demonstrate the use of ArrayList and LinkedList.</li>
+    <li>Create a HashSet to store unique employee IDs.</li>
+    <li>Use HashMap to store and display subject and marks.</li>
+    <li>Implement a TreeSet to display sorted integers.</li>
+    <li>Differentiate between Comparable and Comparator with examples.</li>
+  </ul>
+
+  <h3>✅ Multiple Choice Questions (MCQs)</h3>
+  <ul>
+    <li><strong>Which collection allows duplicate elements?</strong><br>
+      a) Set<br>
+      b) Map<br>
+      c) List ✅<br>
+      d) TreeSet
+    </li><br>
+    <li><strong>Which class maintains insertion order?</strong><br>
+      a) HashSet<br>
+      b) TreeSet<br>
+      c) ArrayList ✅<br>
+      d) HashMap
+    </li><br>
+    <li><strong>What is used to sort elements of a TreeMap?</strong><br>
+      a) Values<br>
+      b) Keys ✅<br>
+      c) HashCode<br>
+      d) None
+    </li><br>
+    <li><strong>Which interface is used for default sorting?</strong><br>
+      a) Comparator<br>
+      b) Iterator<br>
+      c) Comparable ✅<br>
+      d) Collection
+    </li><br>
+    <li><strong>Which method is used by Comparator?</strong><br>
+      a) compareTo()<br>
+      b) compare() ✅<br>
+      c) sort()<br>
+      d) equals()
+    </li>
+  </ul>
+
+  <div class="animation-box">
+    <p><strong>💡 Tip:</strong> Use <code>Collections.sort()</code> with Comparator for custom object sorting!</p>
+  </div>
+
+</body>
+</html>

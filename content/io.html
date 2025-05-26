@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Java Input/Output (I/O)</title>
+</head>
+<body>
+
+  <h2>📘 11. Java Input/Output (I/O)</h2>
+
+  <h3>🔷 Scanner Class</h3>
+  <p>The <code>Scanner</code> class is part of <code>java.util</code> package and is used for reading input from the user.</p>
+  <div class="code-block">
+    <pre><code>import java.util.Scanner;
+
+public class ScannerExample {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your name: ");
+        String name = sc.nextLine();
+        System.out.println("Hello, " + name);
+        sc.close();
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔷 BufferedReader and InputStreamReader</h3>
+  <p><code>BufferedReader</code> is used for fast input using character streams. It wraps around <code>InputStreamReader</code>.</p>
+  <div class="code-block">
+    <pre><code>import java.io.*;
+
+public class BufferedReaderExample {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Enter age: ");
+        int age = Integer.parseInt(br.readLine());
+        System.out.println("You are " + age + " years old.");
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔷 File Handling</h3>
+
+  <h4>📄 Creating and Writing to a File (FileWriter)</h4>
+  <div class="code-block">
+    <pre><code>import java.io.FileWriter;
+import java.io.IOException;
+
+public class WriteFileExample {
+    public static void main(String[] args) {
+        try {
+            FileWriter fw = new FileWriter("output.txt");
+            fw.write("Hello, this is a file write example.");
+            fw.close();
+            System.out.println("File written successfully.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+        }
+    }
+}</code></pre>
+  </div>
+
+  <h4>📖 Reading from a File (FileReader)</h4>
+  <div class="code-block">
+    <pre><code>import java.io.FileReader;
+import java.io.IOException;
+
+public class ReadFileExample {
+    public static void main(String[] args) {
+        try {
+            FileReader fr = new FileReader("output.txt");
+            int i;
+            while ((i = fr.read()) != -1)
+                System.out.print((char) i);
+            fr.close();
+        } catch (IOException e) {
+            System.out.println("File not found.");
+        }
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔷 Byte Streams vs Character Streams</h3>
+  <table>
+    <tr><th>Type</th><th>Description</th><th>Classes</th></tr>
+    <tr><td>Byte Streams</td><td>Used to read/write binary data</td><td>InputStream, OutputStream</td></tr>
+    <tr><td>Character Streams</td><td>Used to read/write character data (text)</td><td>Reader, Writer</td></tr>
+  </table>
+
+  <h3>✍️ Practice Questions</h3>
+  <ul>
+    <li>Write a Java program using Scanner to input name, age and print them.</li>
+    <li>Write a program using BufferedReader to read input from user.</li>
+    <li>Write a program to create and write data to a file named "data.txt".</li>
+    <li>What is the difference between byte streams and character streams?</li>
+    <li>Explain how FileReader and FileWriter work with examples.</li>
+  </ul>
+
+  <h3>✅ Multiple Choice Questions (MCQs)</h3>
+  <ul>
+    <li><strong>Which class is used for taking input from user in Java?</strong><br>
+      a) Console<br>
+      b) Scanner ✅<br>
+      c) InputReader<br>
+      d) Reader
+    </li><br>
+    <li><strong>Which stream reads data in binary form?</strong><br>
+      a) FileReader<br>
+      b) Scanner<br>
+      c) InputStream ✅<br>
+      d) BufferedReader
+    </li><br>
+    <li><strong>Which method is used to read a line from BufferedReader?</strong><br>
+      a) read()<br>
+      b) nextLine()<br>
+      c) readLine() ✅<br>
+      d) getLine()
+    </li><br>
+    <li><strong>Which package contains Scanner class?</strong><br>
+      a) java.io<br>
+      b) java.util ✅<br>
+      c) java.lang<br>
+      d) java.file
+    </li><br>
+    <li><strong>What will FileWriter do if the file already exists?</strong><br>
+      a) Throws error<br>
+      b) Appends to file<br>
+      c) Deletes file<br>
+      d) Overwrites file ✅
+    </li>
+  </ul>
+
+  <div class="animation-box">
+    <p><strong>💡 Tip:</strong> Use <code>BufferedWriter</code> or <code>PrintWriter</code> for writing to large files efficiently!</p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multithreading in Java</title>
+</head>
+<body>
+
+  <h2>📘 15. Multithreading (Basics)</h2>
+
+  <p>Multithreading is a core feature in Java that allows concurrent execution of two or more parts of a program for maximum utilization of CPU. Each part of such a program is called a thread.</p>
+
+  <h3>🔹 Thread Class & Runnable Interface</h3>
+  <p>Java provides two ways to create threads:</p>
+  <ol>
+    <li><strong>Extending Thread class</strong></li>
+    <div class="code-block">
+      <pre><code>class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread is running.");
+    }
+
+    public static void main(String[] args) {
+        MyThread t = new MyThread();
+        t.start();
+    }
+}</code></pre>
+    </div>
+
+    <li><strong>Implementing Runnable interface</strong></li>
+    <div class="code-block">
+      <pre><code>class MyRunnable implements Runnable {
+    public void run() {
+        System.out.println("Runnable thread running.");
+    }
+
+    public static void main(String[] args) {
+        Thread t = new Thread(new MyRunnable());
+        t.start();
+    }
+}</code></pre>
+    </div>
+  </ol>
+
+  <h3>🔹 Thread Life Cycle</h3>
+  <p>Java threads have the following states:</p>
+  <ul>
+    <li><strong>New</strong> – Thread is created but not started.</li>
+    <li><strong>Runnable</strong> – Thread is ready to run and waiting for CPU.</li>
+    <li><strong>Running</strong> – Thread is currently executing.</li>
+    <li><strong>Blocked/Waiting</strong> – Thread is inactive and waiting.</li>
+    <li><strong>Terminated</strong> – Thread is finished executing.</li>
+  </ul>
+
+  <h3>🔹 Thread Methods</h3>
+  <table>
+    <tr><th>Method</th><th>Description</th></tr>
+    <tr><td><code>start()</code></td><td>Starts the execution of the thread.</td></tr>
+    <tr><td><code>run()</code></td><td>Defines the code that runs in the thread.</td></tr>
+    <tr><td><code>sleep(ms)</code></td><td>Pauses thread for specified milliseconds.</td></tr>
+    <tr><td><code>join()</code></td><td>Waits for another thread to finish execution.</td></tr>
+    <tr><td><code>yield()</code></td><td>Pauses current thread to give chance to others.</td></tr>
+  </table>
+
+  <div class="code-block">
+    <pre><code>public class ThreadExample {
+    public static void main(String[] args) throws InterruptedException {
+        Thread t = new Thread(() -> {
+            try {
+                Thread.sleep(1000);
+                System.out.println("Thread after 1 sec");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
+        t.start();
+        t.join(); // Wait for t to finish
+        System.out.println("Main thread ends.");
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔹 Synchronization (Intro)</h3>
+  <p>When multiple threads try to access shared resources, synchronization is used to prevent data inconsistency.</p>
+  <p><strong>Keyword:</strong> <code>synchronized</code></p>
+  <div class="code-block">
+    <pre><code>class Counter {
+    int count = 0;
+
+    synchronized void increment() {
+        count++;
+    }
+}
+
+public class SyncDemo {
+    public static void main(String[] args) throws InterruptedException {
+        Counter c = new Counter();
+
+        Thread t1 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) c.increment();
+        });
+
+        Thread t2 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) c.increment();
+        });
+
+        t1.start(); t2.start();
+        t1.join(); t2.join();
+
+        System.out.println("Final Count: " + c.count);
+    }
+}</code></pre>
+  </div>
+
+  <h3>✍️ Practice Questions</h3>
+  <ul>
+    <li>Write a program using Thread class to print numbers 1 to 5.</li>
+    <li>Use Runnable interface to create a thread that prints “Learning Java Threads”.</li>
+    <li>Demonstrate the use of <code>sleep()</code> and <code>join()</code> methods.</li>
+    <li>Create a shared counter and use synchronization to avoid race conditions.</li>
+  </ul>
+
+  <h3>✅ Multiple Choice Questions (MCQs)</h3>
+  <ul>
+    <li><strong>Which method starts the thread execution?</strong><br>
+      a) run()<br>
+      b) execute()<br>
+      c) start() ✅<br>
+      d) begin()
+    </li><br>
+    <li><strong>Which interface must be implemented for multithreading?</strong><br>
+      a) Serializable<br>
+      b) Runnable ✅<br>
+      c) Comparable<br>
+      d) EventListener
+    </li><br>
+    <li><strong>Which keyword is used to prevent thread interference?</strong><br>
+      a) static<br>
+      b) final<br>
+      c) private<br>
+      d) synchronized ✅
+    </li><br>
+    <li><strong>What is the purpose of the <code>join()</code> method?</strong><br>
+      a) To pause the current thread<br>
+      b) To end a thread<br>
+      c) To wait for another thread to finish ✅<br>
+      d) To start a thread
+    </li><br>
+    <li><strong>Which state does a thread enter after calling <code>sleep()</code>?</strong><br>
+      a) Ready<br>
+      b) Waiting ✅<br>
+      c) New<br>
+      d) Dead
+    </li>
+  </ul>
+
+  <div class="note-box">
+    <p><strong>💡 Note:</strong> Java multithreading improves performance in applications by executing multiple threads simultaneously, but care must be taken with synchronization to avoid data corruption.</p>
+  </div>
+
+</body>
+</html>

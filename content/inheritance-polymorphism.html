@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inheritance and Polymorphism</title>
+</head>
+<body>
+
+  <h2>📘 7. Inheritance and Polymorphism</h2>
+
+  <h3>🔷 Inheritance Types</h3>
+  <p>Inheritance allows a class to inherit fields and methods from another class.</p>
+  <table>
+    <tr><th>Type</th><th>Description</th></tr>
+    <tr><td>Single</td><td>One class inherits from another</td></tr>
+    <tr><td>Multilevel</td><td>Class inherits from a class which is already inherited</td></tr>
+    <tr><td>Hierarchical</td><td>Multiple classes inherit from a single class</td></tr>
+  </table>
+  <div class="code-block">
+    <pre><code>// Single Inheritance
+class Animal {
+    void eat() { System.out.println("Eating..."); }
+}
+class Dog extends Animal {
+    void bark() { System.out.println("Barking..."); }
+}</code></pre>
+  </div>
+
+  <h3>🔷 super Keyword</h3>
+  <p>Used to refer to the immediate parent class constructor or method.</p>
+  <div class="code-block">
+    <pre><code>class Animal {
+    Animal() { System.out.println("Animal Constructor"); }
+}
+class Dog extends Animal {
+    Dog() {
+        super(); // Calls parent constructor
+        System.out.println("Dog Constructor");
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔷 Method Overriding</h3>
+  <p>When a subclass provides its own implementation of a method that is already defined in its parent class.</p>
+  <div class="code-block">
+    <pre><code>class Animal {
+    void sound() { System.out.println("Animal sound"); }
+}
+class Dog extends Animal {
+    @Override
+    void sound() { System.out.println("Bark"); }
+}</code></pre>
+  </div>
+
+  <h3>🔷 final Keyword</h3>
+  <p>The <code>final</code> keyword is used to prevent inheritance or method overriding.</p>
+  <ul>
+    <li><code>final class</code>: Cannot be inherited</li>
+    <li><code>final method</code>: Cannot be overridden</li>
+    <li><code>final variable</code>: Value cannot be changed</li>
+  </ul>
+
+  <div class="code-block">
+    <pre><code>final class Vehicle {
+    final void run() {
+        System.out.println("Running...");
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔷 Polymorphism</h3>
+  <p>Polymorphism means "many forms". It allows one interface to be used for different underlying forms.</p>
+
+  <h4>Compile-time Polymorphism (Method Overloading)</h4>
+  <div class="code-block">
+    <pre><code>class Calculator {
+    int add(int a, int b) { return a + b; }
+    double add(double a, double b) { return a + b; }
+}</code></pre>
+  </div>
+
+  <h4>Run-time Polymorphism (Method Overriding)</h4>
+  <div class="code-block">
+    <pre><code>class Animal {
+    void sound() { System.out.println("Animal sound"); }
+}
+class Cat extends Animal {
+    @Override
+    void sound() { System.out.println("Meow"); }
+}</code></pre>
+  </div>
+
+  <h3>🔷 Dynamic Method Dispatch</h3>
+  <p>When a superclass reference is used to refer to a subclass object and the overridden method is called at runtime.</p>
+  <div class="code-block">
+    <pre><code>Animal obj = new Cat();
+obj.sound();  // Output: Meow</code></pre>
+  </div>
+
+  <h3>✍️ Practice Questions</h3>
+  <ul>
+    <li>Explain the different types of inheritance in Java with examples.</li>
+    <li>Create a base class <code>Shape</code> and derive classes <code>Circle</code> and <code>Rectangle</code> from it.</li>
+    <li>What is method overriding? Give an example.</li>
+    <li>Demonstrate the use of <code>super</code> keyword in constructors.</li>
+    <li>Write a program to show dynamic method dispatch.</li>
+  </ul>
+
+  <h3>✅ Multiple Choice Questions (MCQs)</h3>
+  <ul>
+    <li><strong>Which keyword is used to inherit a class?</strong><br>
+      a) this<br>
+      b) super<br>
+      c) extends ✅<br>
+      d) inherit
+    </li><br>
+    <li><strong>Which keyword refers to the parent class?</strong><br>
+      a) parent<br>
+      b) this<br>
+      c) super ✅<br>
+      d) base
+    </li><br>
+    <li><strong>What is method overriding?</strong><br>
+      a) Same method in different class with same signature ✅<br>
+      b) Same method with different return types<br>
+      c) Same method name with different parameters<br>
+      d) None
+    </li><br>
+    <li><strong>Which type of polymorphism is resolved at runtime?</strong><br>
+      a) Method overloading<br>
+      b) Method overriding ✅<br>
+      c) Constructor overloading<br>
+      d) None
+    </li><br>
+    <li><strong>What is the output of the following code?</strong><br>
+<pre><code>Animal a = new Dog();
+a.sound();</code></pre>
+      a) Animal sound<br>
+      b) Bark ✅<br>
+      c) Error<br>
+      d) None of the above
+    </li>
+  </ul>
+
+  <div class="animation-box">
+    <p><strong>💡 Tip:</strong> Always use inheritance to promote code reuse and polymorphism to improve flexibility and maintainability!</p>
+  </div>
+
+</body>
+</html>

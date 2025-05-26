@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mini Projects in Java</title>
+</head>
+<body>
+
+  <h2>📘 17. Mini Projects (Practice)</h2>
+  <p>Mini projects are great ways to reinforce your Java skills. Below are some beginner-to-intermediate level ideas with basic structure and guidance.</p>
+
+  <h3>🔹 Simple Calculator (Console or GUI)</h3>
+  <p>A basic calculator performing arithmetic operations like add, subtract, multiply, and divide.</p>
+
+  <div class="code-block">
+    <pre><code>import java.util.Scanner;
+
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter first number: ");
+        double a = sc.nextDouble();
+        System.out.print("Enter operator (+, -, *, /): ");
+        char op = sc.next().charAt(0);
+        System.out.print("Enter second number: ");
+        double b = sc.nextDouble();
+        double result = 0;
+
+        switch(op) {
+            case '+': result = a + b; break;
+            case '-': result = a - b; break;
+            case '*': result = a * b; break;
+            case '/': result = a / b; break;
+            default: System.out.println("Invalid operator.");
+        }
+
+        System.out.println("Result: " + result);
+        sc.close();
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔹 Student Grade System</h3>
+  <p>Calculate average marks, percentage, and assign grades based on the score.</p>
+
+  <div class="code-block">
+    <pre><code>public class GradeSystem {
+    public static void main(String[] args) {
+        String name = "Aman";
+        int[] marks = {85, 90, 75, 60, 80};
+        int total = 0;
+        for (int m : marks) total += m;
+        double average = total / marks.length;
+
+        char grade;
+        if (average >= 90) grade = 'A';
+        else if (average >= 75) grade = 'B';
+        else if (average >= 60) grade = 'C';
+        else grade = 'D';
+
+        System.out.println("Name: " + name);
+        System.out.println("Average: " + average);
+        System.out.println("Grade: " + grade);
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔹 Banking System (Using OOP)</h3>
+  <p>A simple account management system that handles deposits, withdrawals, and balance checks.</p>
+
+  <div class="code-block">
+    <pre><code>class BankAccount {
+    String name;
+    int balance;
+
+    BankAccount(String name, int balance) {
+        this.name = name;
+        this.balance = balance;
+    }
+
+    void deposit(int amount) {
+        balance += amount;
+    }
+
+    void withdraw(int amount) {
+        if (amount > balance) {
+            System.out.println("Insufficient Balance");
+        } else {
+            balance -= amount;
+        }
+    }
+
+    void display() {
+        System.out.println(name + "'s Balance: " + balance);
+    }
+
+    public static void main(String[] args) {
+        BankAccount acc = new BankAccount("Aman", 1000);
+        acc.deposit(500);
+        acc.withdraw(200);
+        acc.display();
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔹 File-based ToDo List</h3>
+  <p>Store tasks in a file. Read, add, and remove tasks using Java I/O.</p>
+
+  <div class="code-block">
+    <pre><code>import java.io.*;
+import java.util.*;
+
+public class ToDo {
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        File file = new File("tasks.txt");
+        FileWriter writer = new FileWriter(file, true);
+        System.out.print("Add Task: ");
+        String task = sc.nextLine();
+        writer.write(task + "\n");
+        writer.close();
+
+        Scanner fileReader = new Scanner(file);
+        System.out.println("ToDo List:");
+        while (fileReader.hasNextLine()) {
+            System.out.println("- " + fileReader.nextLine());
+        }
+        fileReader.close();
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔹 Basic Management System (OOP)</h3>
+  <p>Example: Employee or Student management system with CRUD operations.</p>
+
+  <div class="code-block">
+    <pre><code>import java.util.*;
+
+class Student {
+    int id;
+    String name;
+    Student(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    void display() {
+        System.out.println("ID: " + id + ", Name: " + name);
+    }
+}
+
+public class StudentManagement {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList&lt;Student&gt; list = new ArrayList&lt;&gt;();
+
+        list.add(new Student(1, "Aman"));
+        list.add(new Student(2, "Riya"));
+
+        for (Student s : list) {
+            s.display();
+        }
+    }
+}</code></pre>
+  </div>
+
+  <h3>✅ Practice Ideas</h3>
+  <ul>
+    <li>Contact Management System</li>
+    <li>Library Book Management</li>
+    <li>Quiz Application</li>
+    <li>Inventory System</li>
+    <li>Login System with Hardcoded Credentials</li>
+  </ul>
+
+  <h3>🔍 Multiple Choice Questions (MCQs)</h3>
+  <ul>
+    <li><strong>Which concept is mostly used in mini projects?</strong><br>
+      a) Inheritance<br>
+      b) Encapsulation<br>
+      c) OOP ✅<br>
+      d) Method Overriding
+    </li><br>
+    <li><strong>Which class is used to write to a file in Java?</strong><br>
+      a) Scanner<br>
+      b) FileReader<br>
+      c) FileWriter ✅<br>
+      d) PrintReader
+    </li><br>
+    <li><strong>Which collection is best for storing dynamic list of items?</strong><br>
+      a) Array<br>
+      b) LinkedList<br>
+      c) ArrayList ✅<br>
+      d) HashMap
+    </li>
+  </ul>
+
+  <div class="note-box">
+    <p><strong>💡 Tip:</strong> Start with console-based applications. Once you're confident, migrate to GUI-based versions to gain confidence in Java Swing or JavaFX.</p>
+  </div>
+
+</body>
+</html>

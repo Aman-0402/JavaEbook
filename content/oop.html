@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Object-Oriented Programming (OOP)</title>
+</head>
+<body>
+
+  <h2>📗 6. Object-Oriented Programming (OOP)</h2>
+
+  <h3>🔷 Class and Object</h3>
+  <p>A class is a blueprint for objects. An object is an instance of a class.</p>
+  <div class="code-block">
+    <pre><code>class Student {
+    String name;
+    int age;
+}
+public class Test {
+    public static void main(String[] args) {
+        Student s = new Student();
+        s.name = "Aman";
+        s.age = 20;
+        System.out.println(s.name + " is " + s.age + " years old.");
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔷 Constructor (Default & Parameterized)</h3>
+  <p>Constructors initialize objects. Java provides a default constructor if none is defined.</p>
+  <div class="code-block">
+    <pre><code>class Car {
+    String model;
+    Car(String m) { // Parameterized
+        model = m;
+    }
+    Car() { // Default
+        model = "Unknown";
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔷 this Keyword</h3>
+  <p><code>this</code> refers to the current object and is used to distinguish between instance variables and parameters.</p>
+  <div class="code-block">
+    <pre><code>class Book {
+    String title;
+    Book(String title) {
+        this.title = title;
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔷 Method Overloading</h3>
+  <p>Multiple methods with the same name but different parameters.</p>
+  <div class="code-block">
+    <pre><code>class MathUtil {
+    int add(int a, int b) { return a + b; }
+    double add(double a, double b) { return a + b; }
+}</code></pre>
+  </div>
+
+  <h3>🔷 Static Members</h3>
+  <p><code>static</code> variables/methods belong to the class rather than objects. They can be accessed without creating objects.</p>
+  <div class="code-block">
+    <pre><code>class Counter {
+    static int count = 0;
+    Counter() {
+        count++;
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔷 Access Modifiers</h3>
+  <table>
+    <tr><th>Modifier</th><th>Scope</th></tr>
+    <tr><td>private</td><td>Accessible within the same class</td></tr>
+    <tr><td>default</td><td>Accessible within the same package</td></tr>
+    <tr><td>protected</td><td>Accessible in the same package and subclasses</td></tr>
+    <tr><td>public</td><td>Accessible from anywhere</td></tr>
+  </table>
+
+  <h3>🔷 Encapsulation</h3>
+  <p>Wrapping data and methods into a single unit and restricting direct access to some components.</p>
+  <div class="code-block">
+    <pre><code>class Employee {
+    private String name;
+
+    public void setName(String n) {
+        name = n;
+    }
+
+    public String getName() {
+        return name;
+    }
+}</code></pre>
+  </div>
+
+  <h3>✍️ Practice Questions</h3>
+  <ul>
+    <li>Create a class named <code>Person</code> with attributes and methods to display them.</li>
+    <li>Write a constructor for a <code>Car</code> class that accepts model and year.</li>
+    <li>Demonstrate method overloading for an <code>add()</code> method.</li>
+    <li>Use <code>this</code> keyword to distinguish between local and instance variables.</li>
+    <li>Demonstrate encapsulation using getter and setter methods.</li>
+  </ul>
+
+  <h3>✅ Multiple Choice Questions (MCQs)</h3>
+  <ul>
+    <li><strong>What is an object?</strong><br>
+      a) A method<br>
+      b) An instance of a class ✅<br>
+      c) A constructor<br>
+      d) A keyword
+    </li><br>
+    <li><strong>Which keyword refers to the current object?</strong><br>
+      a) self<br>
+      b) this ✅<br>
+      c) current<br>
+      d) obj
+    </li><br>
+    <li><strong>Which modifier provides the most restricted access?</strong><br>
+      a) public<br>
+      b) protected<br>
+      c) private ✅<br>
+      d) default
+    </li><br>
+    <li><strong>What does method overloading require?</strong><br>
+      a) Same return types<br>
+      b) Different method names<br>
+      c) Same name, different parameters ✅<br>
+      d) No parameters
+    </li><br>
+    <li><strong>Encapsulation is achieved using:</strong><br>
+      a) Constructors<br>
+      b) Inheritance<br>
+      c) Getters and setters ✅<br>
+      d) Static methods
+    </li>
+  </ul>
+
+  <div class="animation-box">
+    <p><strong>💡 Tip:</strong> Use OOP to structure your code into real-world models. It improves maintainability and readability!</p>
+  </div>
+
+</body>
+</html>

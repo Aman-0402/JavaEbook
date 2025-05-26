@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Java Swing GUI</title>
+</head>
+<body>
+
+  <h2>📗 16. Basic GUI with Swing (Optional)</h2>
+
+  <p>Java Swing is part of the Java Foundation Classes (JFC) used to create window-based applications. It provides a rich set of widgets and packages to build GUI applications.</p>
+
+  <h3>🔹 JFrame and JPanel</h3>
+  <p><strong>JFrame:</strong> The main window container for a Swing GUI.<br/>
+     <strong>JPanel:</strong> A container for holding components inside the JFrame.</p>
+
+  <div class="code-block">
+    <pre><code>import javax.swing.*;
+
+public class MyFrame {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("My First GUI");
+        frame.setSize(400, 300);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔹 Buttons and TextFields</h3>
+  <p>Common Swing components include:</p>
+  <ul>
+    <li><code>JButton</code> – a clickable button</li>
+    <li><code>JTextField</code> – allows user text input</li>
+    <li><code>JLabel</code> – displays a text label</li>
+  </ul>
+
+  <div class="code-block">
+    <pre><code>import javax.swing.*;
+
+public class BasicComponents {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Components");
+        frame.setSize(300, 200);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JPanel panel = new JPanel();
+        frame.add(panel);
+
+        JLabel label = new JLabel("Enter your name:");
+        JTextField textField = new JTextField(10);
+        JButton button = new JButton("Submit");
+
+        panel.add(label);
+        panel.add(textField);
+        panel.add(button);
+
+        frame.setVisible(true);
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔹 Event Handling</h3>
+  <p>To handle events (like button clicks), use ActionListener interface.</p>
+
+  <div class="code-block">
+    <pre><code>import javax.swing.*;
+import java.awt.event.*;
+
+public class EventExample {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Event Handling");
+        JPanel panel = new JPanel();
+        JTextField textField = new JTextField(10);
+        JButton button = new JButton("Click");
+
+        button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                textField.setText("Button Clicked!");
+            }
+        });
+
+        panel.add(button);
+        panel.add(textField);
+        frame.add(panel);
+        frame.setSize(300, 150);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+}</code></pre>
+  </div>
+
+  <h3>✅ Practice Questions</h3>
+  <ul>
+    <li>Create a GUI with a JFrame, JLabel, and JButton that changes the label text on click.</li>
+    <li>Make a form with two JTextFields and a JButton that adds the numbers entered.</li>
+    <li>Design a simple login form using Swing with dummy validation.</li>
+  </ul>
+
+  <h3>🔍 Multiple Choice Questions (MCQs)</h3>
+  <ul>
+    <li><strong>Which package contains Swing classes?</strong><br>
+      a) java.awt<br>
+      b) java.io<br>
+      c) javax.swing ✅<br>
+      d) java.util
+    </li><br>
+    <li><strong>Which method is used to add components to JFrame?</strong><br>
+      a) append()<br>
+      b) put()<br>
+      c) add() ✅<br>
+      d) insert()
+    </li><br>
+    <li><strong>Which component is used for user input in Swing?</strong><br>
+      a) JLabel<br>
+      b) JTextField ✅<br>
+      c) JButton<br>
+      d) JRadioButton
+    </li><br>
+    <li><strong>Which interface is used for event handling?</strong><br>
+      a) ActionEvent<br>
+      b) EventListener<br>
+      c) ActionListener ✅<br>
+      d) KeyEvent
+    </li>
+  </ul>
+
+  <div class="note-box">
+    <p><strong>💡 Note:</strong> Swing is a powerful and flexible toolkit for building GUIs, but for modern applications, JavaFX or web-based interfaces may also be considered.</p>
+  </div>
+
+</body>
+</html>

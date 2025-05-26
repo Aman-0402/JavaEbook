@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Control Flow Statements</title>
+
+</head>
+<body>
+
+  <h2>📗 4. Control Flow Statements</h2>
+
+  <h3>🔷 Conditional Statements</h3>
+  <p>Used to make decisions in a Java program based on certain conditions.</p>
+
+  <h4>✔️ if Statement</h4>
+  <p>Executes a block of code only if a specified condition is true.</p>
+  <div class="code-block">
+    <pre><code>int age = 18;
+if (age >= 18) {
+    System.out.println("You are eligible to vote.");
+}</code></pre>
+  </div>
+
+  <h4>✔️ if-else Statement</h4>
+  <p>Executes one block if condition is true, another if false.</p>
+  <div class="code-block">
+    <pre><code>int number = 10;
+if (number % 2 == 0) {
+    System.out.println("Even");
+} else {
+    System.out.println("Odd");
+}</code></pre>
+  </div>
+
+  <h4>✔️ if-else-if Ladder</h4>
+  <p>Checks multiple conditions in sequence.</p>
+  <div class="code-block">
+    <pre><code>int marks = 75;
+if (marks >= 90) {
+    System.out.println("Grade A");
+} else if (marks >= 75) {
+    System.out.println("Grade B");
+} else if (marks >= 60) {
+    System.out.println("Grade C");
+} else {
+    System.out.println("Fail");
+}</code></pre>
+  </div>
+
+  <h4>✔️ switch-case</h4>
+  <p>Allows the value of a variable to be tested for equality against multiple values.</p>
+  <div class="code-block">
+    <pre><code>int day = 3;
+switch (day) {
+    case 1: System.out.println("Monday"); break;
+    case 2: System.out.println("Tuesday"); break;
+    case 3: System.out.println("Wednesday"); break;
+    default: System.out.println("Invalid day");
+}</code></pre>
+  </div>
+
+  <h3>🔷 Looping Statements</h3>
+  <p>Loops allow a block of code to be executed repeatedly.</p>
+
+  <h4>✔️ for Loop</h4>
+  <p>Used when the number of iterations is known.</p>
+  <div class="code-block">
+    <pre><code>for (int i = 1; i <= 5; i++) {
+    System.out.println("i = " + i);
+}</code></pre>
+  </div>
+
+  <h4>✔️ while Loop</h4>
+  <p>Executes the block as long as the condition is true.</p>
+  <div class="code-block">
+    <pre><code>int i = 1;
+while (i <= 5) {
+    System.out.println("i = " + i);
+    i++;
+}</code></pre>
+  </div>
+
+  <h4>✔️ do-while Loop</h4>
+  <p>Executes the block at least once, even if the condition is false.</p>
+  <div class="code-block">
+    <pre><code>int i = 1;
+do {
+    System.out.println("i = " + i);
+    i++;
+} while (i <= 5);</code></pre>
+  </div>
+
+  <h3>🔷 Break and Continue</h3>
+
+  <h4>✔️ break Statement</h4>
+  <p>Terminates the loop or switch immediately.</p>
+  <div class="code-block">
+    <pre><code>for (int i = 1; i <= 10; i++) {
+    if (i == 5) break;
+    System.out.println(i);
+}</code></pre>
+  </div>
+
+  <h4>✔️ continue Statement</h4>
+  <p>Skips the current iteration and moves to the next.</p>
+  <div class="code-block">
+    <pre><code>for (int i = 1; i <= 5; i++) {
+    if (i == 3) continue;
+    System.out.println(i);
+}</code></pre>
+  </div>
+
+  <h3>✍️ Practice Questions</h3>
+  <ul>
+    <li>Write a Java program to check if a number is positive, negative, or zero using if-else-if.</li>
+    <li>Write a Java program to print the multiplication table of a number using a for loop.</li>
+    <li>Use a switch statement to print the name of a day based on the number (1 to 7).</li>
+    <li>Write a program to print numbers from 1 to 10 but skip 5 using continue.</li>
+    <li>Use a do-while loop to display numbers from 10 to 1.</li>
+  </ul>
+
+  <h3>✅ Multiple Choice Questions (MCQs)</h3>
+  <ul>
+    <li><strong>Which statement is used to make decisions in Java?</strong><br>
+      a) loop <br>
+      b) switch <br>
+      c) if ✅<br>
+      d) case
+    </li><br>
+    <li><strong>Which loop is guaranteed to execute at least once?</strong><br>
+      a) for <br>
+      b) while <br>
+      c) do-while ✅<br>
+      d) if-else
+    </li><br>
+    <li><strong>What is the default case in a switch used for?</strong><br>
+      a) To end the switch <br>
+      b) Executes if no case matches ✅<br>
+      c) To break the loop <br>
+      d) None
+    </li><br>
+    <li><strong>What does the 'continue' statement do?</strong><br>
+      a) Ends the program <br>
+      b) Skips current iteration ✅<br>
+      c) Restarts loop <br>
+      d) Exits the method
+    </li><br>
+    <li><strong>Which of these is not a loop control structure?</strong><br>
+      a) for <br>
+      b) while <br>
+      c) continue <br>
+      d) case ✅
+    </li>
+  </ul>
+
+  <div class="animation-box">
+    <p><strong>💡 Fun Fact:</strong> The "break" and "continue" keywords can also be used with labels to control nested loops in Java!</p>
+  </div>
+
+</body>
+</html>

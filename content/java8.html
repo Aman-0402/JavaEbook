@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Java 8 Features</title>
+</head>
+<body>
+
+  <h2>📘 14. Java 8 Features (Intro)</h2>
+
+  <p>Java 8 introduced several major features aimed at improving the efficiency, readability, and conciseness of Java code. These include lambda expressions, the Stream API, method references, and functional interfaces.</p>
+
+  <h3>🔹 Lambda Expressions</h3>
+  <p>Lambda expressions allow us to write anonymous methods (functions) in a concise way.</p>
+  <p><strong>Syntax:</strong> <code>(parameters) -> expression or block</code></p>
+  <div class="code-block">
+    <pre><code>interface Greeting {
+    void sayHello();
+}
+
+public class LambdaDemo {
+    public static void main(String[] args) {
+        Greeting greet = () -> System.out.println("Hello, Java 8!");
+        greet.sayHello();
+    }
+}</code></pre>
+  </div>
+  <ul>
+    <li>Can be used to implement interfaces with a single abstract method (functional interfaces).</li>
+    <li>Improves readability and reduces boilerplate code.</li>
+  </ul>
+
+  <h3>🔹 Functional Interfaces</h3>
+  <p>An interface with exactly one abstract method is called a functional interface. Java 8 provides a new annotation <code>@FunctionalInterface</code>.</p>
+  <div class="code-block">
+    <pre><code>@FunctionalInterface
+interface MyFunction {
+    void execute();
+}
+
+public class Test {
+    public static void main(String[] args) {
+        MyFunction f = () -> System.out.println("Functional Interface in action!");
+        f.execute();
+    }
+}</code></pre>
+  </div>
+
+  <p><strong>Common Functional Interfaces in <code>java.util.function</code> package:</strong></p>
+  <table>
+    <tr><th>Interface</th><th>Description</th></tr>
+    <tr><td>Predicate&lt;T&gt;</td><td>Returns boolean value</td></tr>
+    <tr><td>Function&lt;T, R&gt;</td><td>Returns value of type R</td></tr>
+    <tr><td>Consumer&lt;T&gt;</td><td>Performs operation on T</td></tr>
+    <tr><td>Supplier&lt;T&gt;</td><td>Returns value of type T</td></tr>
+  </table>
+
+  <h3>🔹 Method References</h3>
+  <p>Method references provide a way to refer to methods without executing them. It uses <code>::</code> operator.</p>
+  <div class="code-block">
+    <pre><code>import java.util.function.Consumer;
+
+public class MethodRef {
+    static void sayHi(String name) {
+        System.out.println("Hi " + name);
+    }
+
+    public static void main(String[] args) {
+        Consumer&lt;String&gt; con = MethodRef::sayHi;
+        con.accept("Aman");
+    }
+}</code></pre>
+  </div>
+
+  <p><strong>Types of Method References:</strong></p>
+  <ul>
+    <li><code>ClassName::staticMethod</code></li>
+    <li><code>object::instanceMethod</code></li>
+    <li><code>ClassName::new</code> (Constructor reference)</li>
+  </ul>
+
+  <h3>🔹 Stream API Basics</h3>
+  <p>The Stream API provides functional-style operations on sequences of elements (like a list or array).</p>
+  <div class="code-block">
+    <pre><code>import java.util.Arrays;
+import java.util.List;
+
+public class StreamExample {
+    public static void main(String[] args) {
+        List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);
+        numbers.stream()
+               .filter(n -&gt; n % 2 == 0)
+               .map(n -&gt; n * n)
+               .forEach(System.out::println);
+    }
+}</code></pre>
+  </div>
+  <p><strong>Common Stream Operations:</strong></p>
+  <ul>
+    <li><code>filter()</code>: Filters elements based on a condition</li>
+    <li><code>map()</code>: Transforms elements</li>
+    <li><code>forEach()</code>: Performs an action for each element</li>
+    <li><code>collect()</code>: Converts stream to list, set, etc.</li>
+  </ul>
+
+  <h3>✍️ Practice Questions</h3>
+  <ul>
+    <li>Write a lambda expression to print "Welcome to Java 8".</li>
+    <li>Use a method reference to refer to a static method that prints a message.</li>
+    <li>Create a stream to square only even numbers from a list of integers.</li>
+    <li>What is the purpose of the @FunctionalInterface annotation?</li>
+  </ul>
+
+  <h3>✅ Multiple Choice Questions (MCQs)</h3>
+  <ul>
+    <li><strong>Which symbol is used in a lambda expression?</strong><br>
+      a) -> ✅<br>
+      b) ::<br>
+      c) =><br>
+      d) **
+    </li><br>
+    <li><strong>Which interface is used to represent a function that returns a boolean?</strong><br>
+      a) Supplier<br>
+      b) Consumer<br>
+      c) Predicate ✅<br>
+      d) Function
+    </li><br>
+    <li><strong>What is the output of <code>System.out::println</code>?</strong><br>
+      a) It executes the method<br>
+      b) It's a method reference ✅<br>
+      c) It throws an error<br>
+      d) None of the above
+    </li><br>
+    <li><strong>What is the Stream API mainly used for?</strong><br>
+      a) Performing I/O operations<br>
+      b) Storing data<br>
+      c) Processing collections ✅<br>
+      d) Defining classes
+    </li><br>
+    <li><strong>Which package contains predefined functional interfaces?</strong><br>
+      a) java.io<br>
+      b) java.lang<br>
+      c) java.util.function ✅<br>
+      d) java.stream
+    </li>
+  </ul>
+
+  <div class="note-box">
+    <p><strong>💡 Note:</strong> Java 8’s functional programming features help you write cleaner and more concise code, making Java a more modern language for development.</p>
+  </div>
+
+</body>
+</html>

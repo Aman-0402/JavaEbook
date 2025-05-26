@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Packages and Access Control</title>
+</head>
+<body>
+
+  <h2>📘 9. Packages and Access Control</h2>
+
+  <h3>🔷 Creating and Using Packages</h3>
+  <p>A package is a namespace that organizes a set of related classes and interfaces. It helps prevent name conflicts and controls access with protected and default access.</p>
+  <div class="code-block">
+    <pre><code>// File: mypackage/MyClass.java
+package mypackage;
+
+public class MyClass {
+    public void show() {
+        System.out.println("Hello from MyClass in mypackage");
+    }
+}
+
+// File: Test.java
+import mypackage.MyClass;
+
+public class Test {
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        obj.show();
+    }
+}</code></pre>
+  </div>
+  <ul>
+    <li>Use <code>package</code> keyword to define your own package.</li>
+    <li>Use <code>import</code> to include and use packages.</li>
+  </ul>
+
+  <h3>🔷 Built-in Packages</h3>
+  <p>Java provides many built-in packages for various tasks:</p>
+  <table>
+    <tr><th>Package</th><th>Purpose</th></tr>
+    <tr><td>java.lang</td><td>Fundamental classes (String, Math, Object, etc.)</td></tr>
+    <tr><td>java.util</td><td>Data structures, date/time, and utilities</td></tr>
+    <tr><td>java.io</td><td>Input/output operations (file reading/writing)</td></tr>
+    <tr><td>java.net</td><td>Networking functionality (sockets, URLs)</td></tr>
+    <tr><td>java.sql</td><td>Database connectivity using JDBC</td></tr>
+  </table>
+
+  <h3>🔷 Importing Packages</h3>
+  <ul>
+    <li><code>import package.ClassName;</code> → Imports a specific class</li>
+    <li><code>import package.*;</code> → Imports all classes from a package</li>
+  </ul>
+  <div class="code-block">
+    <pre><code>import java.util.Scanner;
+
+public class Example {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your name:");
+        String name = sc.nextLine();
+        System.out.println("Hello, " + name);
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔷 Access Specifiers</h3>
+  <p>Access specifiers define the accessibility of classes, methods, and variables.</p>
+  <table>
+    <tr><th>Modifier</th><th>Same Class</th><th>Same Package</th><th>Subclass</th><th>Other Packages</th></tr>
+    <tr><td>public</td><td>✔️</td><td>✔️</td><td>✔️</td><td>✔️</td></tr>
+    <tr><td>protected</td><td>✔️</td><td>✔️</td><td>✔️</td><td>❌</td></tr>
+    <tr><td>default (no modifier)</td><td>✔️</td><td>✔️</td><td>❌</td><td>❌</td></tr>
+    <tr><td>private</td><td>✔️</td><td>❌</td><td>❌</td><td>❌</td></tr>
+  </table>
+  <div class="code-block">
+    <pre><code>public class AccessDemo {
+    public int a = 10;
+    private int b = 20;
+    protected int c = 30;
+    int d = 40; // default access
+}</code></pre>
+  </div>
+
+  <h3>✍️ Practice Questions</h3>
+  <ul>
+    <li>What are the advantages of using packages in Java?</li>
+    <li>Explain the difference between java.lang and java.util packages.</li>
+    <li>Write a Java program to create and use a user-defined package.</li>
+    <li>Differentiate between public, private, protected, and default access specifiers.</li>
+    <li>What is the use of the import statement in Java?</li>
+  </ul>
+
+  <h3>✅ Multiple Choice Questions (MCQs)</h3>
+  <ul>
+    <li><strong>Which keyword is used to define a package in Java?</strong><br>
+      a) import<br>
+      b) package ✅<br>
+      c) class<br>
+      d) interface
+    </li><br>
+    <li><strong>Which Java package is automatically imported?</strong><br>
+      a) java.util<br>
+      b) java.io<br>
+      c) java.lang ✅<br>
+      d) java.sql
+    </li><br>
+    <li><strong>Which access specifier restricts access only to the same class?</strong><br>
+      a) private ✅<br>
+      b) protected<br>
+      c) public<br>
+      d) default
+    </li><br>
+    <li><strong>Which access level allows access within the same package?</strong><br>
+      a) protected<br>
+      b) default ✅<br>
+      c) private<br>
+      d) final
+    </li><br>
+    <li><strong>What does import java.util.*; do?</strong><br>
+      a) Imports one class<br>
+      b) Imports all classes from java.util ✅<br>
+      c) Imports nothing<br>
+      d) Causes an error
+    </li>
+  </ul>
+
+  <div class="animation-box">
+    <p><strong>💡 Fun Fact:</strong> Java’s built-in packages are so extensive that you can build complex applications without ever needing to write your own package!</p>
+  </div>
+
+</body>
+</html>

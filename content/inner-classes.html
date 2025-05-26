@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inner Classes in Java</title>
+</head>
+<body>
+
+  <h2>📘 13. Inner Classes</h2>
+
+  <p>Java allows you to define a class within another class. Such classes are called <strong>Inner Classes</strong>. They can access members (including private) of the outer class and help logically group classes that are only used in one place.</p>
+
+  <h3>🔹 1. Member Inner Class</h3>
+  <p>A non-static class defined inside another class. It has access to all members of the outer class.</p>
+  <div class="code-block">
+    <pre><code>class Outer {
+    private String msg = "Hello from Outer";
+
+    class Inner {
+        void display() {
+            System.out.println(msg);
+        }
+    }
+
+    public static void main(String[] args) {
+        Outer outer = new Outer();
+        Outer.Inner inner = outer.new Inner();
+        inner.display();
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔹 2. Static Nested Class</h3>
+  <p>A static class defined inside another class. It can only access static members of the outer class directly.</p>
+  <div class="code-block">
+    <pre><code>class Outer {
+    static int data = 50;
+
+    static class Nested {
+        void msg() {
+            System.out.println("Static data: " + data);
+        }
+    }
+
+    public static void main(String[] args) {
+        Outer.Nested obj = new Outer.Nested();
+        obj.msg();
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔹 3. Anonymous Inner Class</h3>
+  <p>A class without a name used for instantiating classes or interfaces. Often used for event handling or thread creation.</p>
+  <div class="code-block">
+    <pre><code>abstract class Animal {
+    abstract void sound();
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Animal a = new Animal() {
+            void sound() {
+                System.out.println("Roar");
+            }
+        };
+        a.sound();
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔹 4. Local Inner Class</h3>
+  <p>Defined inside a method and can access local variables (must be final or effectively final).</p>
+  <div class="code-block">
+    <pre><code>class Outer {
+    void outerMethod() {
+        int num = 100;
+
+        class LocalInner {
+            void print() {
+                System.out.println("Value: " + num);
+            }
+        }
+
+        LocalInner inner = new LocalInner();
+        inner.print();
+    }
+
+    public static void main(String[] args) {
+        Outer o = new Outer();
+        o.outerMethod();
+    }
+}</code></pre>
+  </div>
+
+  <h3>📝 Summary Table</h3>
+  <table>
+    <tr><th>Type</th><th>Static</th><th>Access Outer Members</th><th>Defined Inside</th></tr>
+    <tr><td>Member Inner</td><td>No</td><td>Yes</td><td>Class</td></tr>
+    <tr><td>Static Nested</td><td>Yes</td><td>Only static</td><td>Class</td></tr>
+    <tr><td>Anonymous</td><td>No</td><td>Yes</td><td>Expression</td></tr>
+    <tr><td>Local Inner</td><td>No</td><td>Yes (final vars)</td><td>Method</td></tr>
+  </table>
+
+  <h3>✍️ Practice Questions</h3>
+  <ul>
+    <li>Write a program using a member inner class to access private data of the outer class.</li>
+    <li>Create a static nested class and print a static variable from the outer class.</li>
+    <li>Use an anonymous inner class to implement a Runnable interface.</li>
+    <li>Implement a local inner class inside a method that prints a local variable.</li>
+  </ul>
+
+  <h3>✅ Multiple Choice Questions (MCQs)</h3>
+  <ul>
+    <li><strong>Which inner class can access only static members of outer class?</strong><br>
+      a) Member Inner Class<br>
+      b) Static Nested Class ✅<br>
+      c) Local Inner Class<br>
+      d) Anonymous Inner Class
+    </li><br>
+    <li><strong>Anonymous inner class must be:</strong><br>
+      a) Named<br>
+      b) Static<br>
+      c) Defined inside a method<br>
+      d) Defined and instantiated simultaneously ✅
+    </li><br>
+    <li><strong>Which class is defined inside a method?</strong><br>
+      a) Member Inner<br>
+      b) Static Nested<br>
+      c) Local Inner ✅<br>
+      d) None
+    </li><br>
+    <li><strong>Which inner class does not have a constructor?</strong><br>
+      a) Anonymous Inner ✅<br>
+      b) Member Inner<br>
+      c) Static Nested<br>
+      d) Local Inner
+    </li><br>
+    <li><strong>What keyword is used to access a member inner class?</strong><br>
+      a) static<br>
+      b) new ✅<br>
+      c) this<br>
+      d) final
+    </li>
+  </ul>
+
+  <div class="note-box">
+    <p><strong>💡 Note:</strong> Use inner classes to logically group classes that are only used in one place for better encapsulation and cleaner code.</p>
+  </div>
+
+</body>
+</html>

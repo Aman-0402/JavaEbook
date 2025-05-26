@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Learn Java - Interactive eBook</title>
+  <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+  <header>
+    <h1>Java Programming</h1>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <h1>Topics</h1>
+      <ul>
+        <li onclick="loadContent('intro.html', event)">1. Introduction to Java</li>
+        <li onclick="loadContent('basics.html', event)">2. Java Basics</li>
+        <li onclick="loadContent('operators.html', event)">3. Operators and Expressions</li>
+        <li onclick="loadContent('control-flow.html', event)">4. Control Flow Statements</li>
+        <li onclick="loadContent('arrays-strings.html', event)">5. Arrays and Strings</li>
+        <li onclick="loadContent('oop.html', event)">6. Object-Oriented Programming (OOP)</li>
+        <li onclick="loadContent('inheritance-polymorphism.html', event)">7. Inheritance and Polymorphism</li>
+        <li onclick="loadContent('abstract-interfaces.html', event)">8. Abstract Classes and Interfaces</li>
+        <li onclick="loadContent('packages-access.html', event)">9. Packages and Access Control</li>
+        <li onclick="loadContent('exceptions.html', event)">10. Exception Handling</li>
+        <li onclick="loadContent('io.html', event)">11. Java Input/Output (I/O)</li>
+        <li onclick="loadContent('collections.html', event)">12. Collections Framework</li>
+        <li onclick="loadContent('inner-classes.html', event)">13. Inner Classes</li>
+        <li onclick="loadContent('java8.html', event)">14. Java 8 Features (Intro)</li>
+        <li onclick="loadContent('multithreading.html', event)">15. Multithreading (Basics)</li>
+        <li onclick="loadContent('gui-swing.html', event)">16. Basic GUI with Swing (Optional)</li>
+        <li onclick="loadContent('mini-projects.html, event')">17. Mini Projects (Practice)</li>
+        <li onclick="loadContent('mcq', event)">Quiz</li>
+      </ul>
+      
+    </aside>
+
+    <main id="content">
+        <h2>📘 Welcome to Java Interactive eBook</h2>
+        <p>
+          Ready to master Java? This interactive guide will help you learn everything from the basics to advanced topics — step by step.
+        </p>
+      
+        <div class="animation-box">
+          <h3>💡 How This Works:</h3>
+          <ul>
+            <li>📂 Click topics on the sidebar to explore content.</li>
+            <li>📄 Learn with explanations, examples, and visuals.</li>
+            <li>🧠 Test your knowledge with quizzes and exercises.</li>
+            <li>🏆 Complete mini-projects to sharpen your skills.</li>
+          </ul>
+        </div>
+      
+        <p>
+          🎯 <strong>Pro Tip:</strong> Bookmark this page or create a study schedule to keep progressing consistently.
+        </p>
+      
+        <div class="animation-box">
+          <p><strong>🔥 Did You Know?</strong> Over 9 million developers use Java worldwide — you're on the path to joining a global community of coders!</p>
+        </div>
+      
+        <p>👈 Start your journey by selecting <strong>"Introduction to Java"</strong> from the sidebar.</p>
+      </main>
+      
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Java eBook by Aman</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

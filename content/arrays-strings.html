@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arrays and Strings</title>
+</head>
+<body>
+
+  <h2>📘 5. Arrays and Strings</h2>
+
+  <h3>🔷 One-dimensional Arrays</h3>
+  <p>An array is a container object that holds a fixed number of values of a single type.</p>
+  <div class="code-block">
+    <pre><code>int[] numbers = new int[5];
+numbers[0] = 10;
+numbers[1] = 20;
+System.out.println(numbers[0]);</code></pre>
+  </div>
+
+  <h3>🔷 Two-dimensional Arrays</h3>
+  <p>A 2D array is an array of arrays. Useful for matrices or tables.</p>
+  <div class="code-block">
+    <pre><code>int[][] matrix = {
+    {1, 2, 3},
+    {4, 5, 6}
+};
+System.out.println(matrix[1][2]); // Output: 6</code></pre>
+  </div>
+
+  <h3>🔷 Array Methods</h3>
+  <ul>
+    <li><code>Arrays.sort(arr)</code> – Sorts the array</li>
+    <li><code>Arrays.toString(arr)</code> – Returns a string representation</li>
+    <li><code>Arrays.copyOf(arr, newLength)</code> – Copies the array</li>
+  </ul>
+  <div class="code-block">
+    <pre><code>import java.util.Arrays;
+int[] a = {5, 3, 1};
+Arrays.sort(a);
+System.out.println(Arrays.toString(a));</code></pre>
+  </div>
+
+  <h3>🔷 Enhanced for-loop</h3>
+  <p>Used to iterate through arrays or collections easily.</p>
+  <div class="code-block">
+    <pre><code>int[] nums = {1, 2, 3};
+for (int num : nums) {
+    System.out.println(num);
+}</code></pre>
+  </div>
+
+  <h3>🔷 String Basics</h3>
+  <p>Strings are objects in Java that represent sequences of characters.</p>
+  <div class="code-block">
+    <pre><code>String name = "Java";
+System.out.println(name.length());</code></pre>
+  </div>
+
+  <h3>🔷 Common String Methods</h3>
+  <table>
+    <tr><th>Method</th><th>Description</th></tr>
+    <tr><td><code>length()</code></td><td>Returns length of string</td></tr>
+    <tr><td><code>charAt(index)</code></td><td>Returns character at index</td></tr>
+    <tr><td><code>substring(begin, end)</code></td><td>Returns part of the string</td></tr>
+    <tr><td><code>equals(str)</code></td><td>Checks equality</td></tr>
+    <tr><td><code>toUpperCase()</code></td><td>Converts to uppercase</td></tr>
+    <tr><td><code>indexOf(char)</code></td><td>Finds index of character</td></tr>
+  </table>
+
+  <h3>🔷 StringBuilder vs StringBuffer</h3>
+  <table>
+    <tr><th>Aspect</th><th>StringBuilder</th><th>StringBuffer</th></tr>
+    <tr><td>Thread-Safe</td><td>No</td><td>Yes ✅</td></tr>
+    <tr><td>Performance</td><td>Faster</td><td>Slower</td></tr>
+    <tr><td>Mutability</td><td>Mutable</td><td>Mutable</td></tr>
+  </table>
+
+  <div class="code-block">
+    <pre><code>StringBuilder sb = new StringBuilder("Hello");
+sb.append(" Java");
+System.out.println(sb.toString());</code></pre>
+  </div>
+
+  <h3>✍️ Practice Questions</h3>
+  <ul>
+    <li>Write a program to input 5 integers in an array and display their sum.</li>
+    <li>Write a program to reverse a string using a loop.</li>
+    <li>Use a 2D array to store and display a 3x3 matrix.</li>
+    <li>Demonstrate use of StringBuilder to append and reverse a string.</li>
+    <li>Create an array and sort it using Arrays.sort() method.</li>
+  </ul>
+
+  <h3>✅ Multiple Choice Questions (MCQs)</h3>
+  <ul>
+    <li><strong>What is the index of the first element in an array?</strong><br>
+      a) -1<br>
+      b) 0 ✅<br>
+      c) 1<br>
+      d) None
+    </li><br>
+    <li><strong>Which of the following is mutable?</strong><br>
+      a) String<br>
+      b) StringBuilder ✅<br>
+      c) final String<br>
+      d) char
+    </li><br>
+    <li><strong>Which method is used to find the length of a string?</strong><br>
+      a) size()<br>
+      b) count()<br>
+      c) length ✅<br>
+      d) getLength()
+    </li><br>
+    <li><strong>Which loop is best for traversing an array?</strong><br>
+      a) while<br>
+      b) do-while<br>
+      c) enhanced for-loop ✅<br>
+      d) if-else
+    </li><br>
+    <li><strong>Which class is thread-safe?</strong><br>
+      a) StringBuilder<br>
+      b) StringBuffer ✅<br>
+      c) String<br>
+      d) None
+    </li>
+  </ul>
+
+  <div class="animation-box">
+    <p><strong>💡 Tip:</strong> Use StringBuilder when you need to manipulate strings frequently and performance is important!</p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Java Basics</title>
+ 
+</head>
+<body>
+
+  <h2>📗 2. Java Basics</h2>
+
+  <h3>🔷 Writing Your First Java Program (HelloWorld.java)</h3>
+  <pre class="code-block"><code>// HelloWorld.java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+  </code></pre>
+  <ul>
+    <li><code>public class HelloWorld</code>: Defines a class named <code>HelloWorld</code>.</li>
+    <li><code>public static void main(String[] args)</code>: Entry point of any Java program.</li>
+    <li><code>System.out.println()</code>: Prints output to the console.</li>
+  </ul>
+
+  <h3>🔷 Java Syntax & Structure</h3>
+  <ul>
+    <li>Every Java application must have at least one class.</li>
+    <li>Statements end with a semicolon <code>;</code>.</li>
+    <li>Java is case-sensitive.</li>
+    <li>Curly braces <code>{}</code> define code blocks.</li>
+    <li>The <code>main</code> method is the program’s entry point.</li>
+  </ul>
+  <pre class="code-block"><code>public class ClassName {
+    public static void main(String[] args) {
+        // Your code here
+    }
+}</code></pre>
+
+  <h3>🔷 Data Types & Variables</h3>
+  <table>
+    <tr><th>Data Type</th><th>Size</th><th>Description</th><th>Example</th></tr>
+    <tr><td>byte</td><td>1 byte</td><td>Small integers (-128 to 127)</td><td><code>byte b = 10;</code></td></tr>
+    <tr><td>short</td><td>2 bytes</td><td>Small integers</td><td><code>short s = 1000;</code></td></tr>
+    <tr><td>int</td><td>4 bytes</td><td>Integers</td><td><code>int i = 50000;</code></td></tr>
+    <tr><td>long</td><td>8 bytes</td><td>Large integers</td><td><code>long l = 100000L;</code></td></tr>
+    <tr><td>float</td><td>4 bytes</td><td>Decimal numbers (single precision)</td><td><code>float f = 5.75f;</code></td></tr>
+    <tr><td>double</td><td>8 bytes</td><td>Decimal numbers (double precision)</td><td><code>double d = 19.99;</code></td></tr>
+    <tr><td>char</td><td>2 bytes</td><td>Single character</td><td><code>char c = 'A';</code></td></tr>
+    <tr><td>boolean</td><td>1 bit</td><td>true or false</td><td><code>boolean b = true;</code></td></tr>
+  </table>
+
+  <h3>🔷 Type Casting</h3>
+  <p><strong>Implicit casting (Widening):</strong> Automatic conversion from smaller to larger types.</p>
+  <pre class="code-block"><code>int i = 100;
+long l = i;  // int to long</code></pre>
+  <p><strong>Explicit casting (Narrowing):</strong> Manual conversion from larger to smaller types.</p>
+  <pre class="code-block"><code>double d = 100.04;
+int i = (int) d;  // double to int, fractional part lost</code></pre>
+
+  <h3>🔷 Constants and Literals</h3>
+  <p>Literals are fixed values written directly in code. Use the <code>final</code> keyword to declare constants (values that don’t change).</p>
+  <pre class="code-block"><code>final double PI = 3.14159;</code></pre>
+
+  <h3>🔷 Comments in Java</h3>
+  <ul>
+    <li><strong>Single-line comment:</strong> <code>// This is a comment</code></li>
+    <li><strong>Multi-line comment:</strong><br />
+      <code>/* This is<br />a multi-line<br />comment */</code></li>
+    <li><strong>Documentation comment:</strong><br />
+      <code>/** This is a documentation comment */</code></li>
+  </ul>
+
+  <h3>✍️ Practice Questions</h3>
+  <ul>
+    <li>Write and run a Java program to print your name.</li>
+    <li>Declare variables of all primitive data types and print their values.</li>
+    <li>Write a program demonstrating both implicit and explicit type casting.</li>
+    <li>Create a constant <code>PI</code> using the <code>final</code> keyword and use it in a formula.</li>
+    <li>Add single-line and multi-line comments in a Java program.</li>
+  </ul>
+
+  <h3>✅ Multiple Choice Questions (MCQs)</h3>
+  <ul>
+    <li><strong>Which method is the entry point of a Java program?</strong><br />
+      a) start() <br />
+      b) run() <br />
+      c) main() ✅ <br />
+      d) init()
+    </li><br />
+    <li><strong>What is the size of a <code>char</code> data type in Java?</strong><br />
+      a) 1 byte <br />
+      b) 2 bytes ✅ <br />
+      c) 4 bytes <br />
+      d) 8 bytes
+    </li><br />
+    <li><strong>Which of the following is a valid variable declaration?</strong><br />
+      a) <code>int 1number;</code> <br />
+      b) <code>float $price;</code> <br />
+      c) <code>boolean isAvailable;</code> ✅ <br />
+      d) <code>double value#;</code>
+    </li><br />
+    <li><strong>Which keyword is used to declare a constant?</strong><br />
+      a) const <br />
+      b) constant <br />
+      c) final ✅ <br />
+      d) static
+    </li><br />
+    <li><strong>What type of comment is <code>/* This is a comment */</code>?</strong><br />
+      a) Single-line comment <br />
+      b) Multi-line comment ✅ <br />
+      c) Documentation comment <br />
+      d) Inline comment
+    </li>
+  </ul>
+
+</body>
+</html>

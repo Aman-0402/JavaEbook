@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Operators and Expressions</title>
+  
+</head>
+<body>
+
+  <h2>📘 3. Operators and Expressions</h2>
+
+  <h3>🔷 Arithmetic Operators</h3>
+  <p>Used to perform mathematical operations.</p>
+  <table>
+    <tr><th>Operator</th><th>Description</th><th>Example</th></tr>
+    <tr><td>+</td><td>Addition</td><td>10 + 5 = 15</td></tr>
+    <tr><td>-</td><td>Subtraction</td><td>10 - 5 = 5</td></tr>
+    <tr><td>*</td><td>Multiplication</td><td>10 * 5 = 50</td></tr>
+    <tr><td>/</td><td>Division</td><td>10 / 5 = 2</td></tr>
+    <tr><td>%</td><td>Modulus (remainder)</td><td>10 % 3 = 1</td></tr>
+  </table>
+
+  <h3>🔷 Relational Operators</h3>
+  <p>Used to compare two values. Result is a boolean (true/false).</p>
+  <table>
+    <tr><th>Operator</th><th>Description</th><th>Example</th></tr>
+    <tr><td>==</td><td>Equal to</td><td>5 == 5 → true</td></tr>
+    <tr><td>!=</td><td>Not equal to</td><td>5 != 3 → true</td></tr>
+    <tr><td>&gt;</td><td>Greater than</td><td>5 &gt; 3 → true</td></tr>
+    <tr><td>&lt;</td><td>Less than</td><td>5 &lt; 3 → false</td></tr>
+    <tr><td>&gt;=</td><td>Greater than or equal to</td><td>5 &gt;= 5 → true</td></tr>
+    <tr><td>&lt;=</td><td>Less than or equal to</td><td>3 &lt;= 5 → true</td></tr>
+  </table>
+
+  <h3>🔷 Logical Operators</h3>
+  <p>Used to combine multiple conditions.</p>
+  <table>
+    <tr><th>Operator</th><th>Description</th><th>Example</th></tr>
+    <tr><td>&&</td><td>Logical AND</td><td>(5 &gt; 2) && (4 &lt; 6) → true</td></tr>
+    <tr><td>||</td><td>Logical OR</td><td>(5 &lt; 2) || (4 &lt; 6) → true</td></tr>
+    <tr><td>!</td><td>Logical NOT</td><td>!(5 == 5) → false</td></tr>
+  </table>
+
+  <h3>🔷 Assignment Operators</h3>
+  <p>Used to assign values to variables.</p>
+  <table>
+    <tr><th>Operator</th><th>Description</th><th>Example</th></tr>
+    <tr><td>=</td><td>Assign</td><td>int a = 5;</td></tr>
+    <tr><td>+=</td><td>Add and assign</td><td>a += 3 → a = a + 3</td></tr>
+    <tr><td>-=</td><td>Subtract and assign</td><td>a -= 2 → a = a - 2</td></tr>
+    <tr><td>*=</td><td>Multiply and assign</td><td>a *= 2 → a = a * 2</td></tr>
+    <tr><td>/=</td><td>Divide and assign</td><td>a /= 2 → a = a / 2</td></tr>
+    <tr><td>%=</td><td>Modulus and assign</td><td>a %= 2 → a = a % 2</td></tr>
+  </table>
+
+  <h3>🔷 Increment & Decrement</h3>
+  <p>Used to increase or decrease a variable's value by 1.</p>
+  <table>
+    <tr><th>Operator</th><th>Description</th><th>Example</th></tr>
+    <tr><td>++</td><td>Increment</td><td>a++ or ++a</td></tr>
+    <tr><td>--</td><td>Decrement</td><td>a-- or --a</td></tr>
+  </table>
+  <p><strong>Note:</strong> <code>++a</code> is pre-increment, <code>a++</code> is post-increment.</p>
+
+  <h3>🔷 Bitwise Operators</h3>
+  <p>Operate on bits and perform bit-by-bit operations.</p>
+  <table>
+    <tr><th>Operator</th><th>Description</th></tr>
+    <tr><td>&</td><td>Bitwise AND</td></tr>
+    <tr><td>|</td><td>Bitwise OR</td></tr>
+    <tr><td>^</td><td>Bitwise XOR</td></tr>
+    <tr><td>~</td><td>Bitwise Complement</td></tr>
+    <tr><td>&lt;&lt;</td><td>Left shift</td></tr>
+    <tr><td>&gt;&gt;</td><td>Right shift</td></tr>
+  </table>
+
+  <h3>🔷 Ternary Operator</h3>
+  <p>A shorthand for if-else conditions: <code>condition ? expr1 : expr2;</code></p>
+  <pre class="code-block"><code>int a = 10, b = 20;
+int max = (a > b) ? a : b;
+System.out.println("Max: " + max);</code></pre>
+
+  <h3>✍️ Practice Questions</h3>
+  <ul>
+    <li>Write a Java program to demonstrate all arithmetic operators.</li>
+    <li>Use relational and logical operators to check if a number is positive and even.</li>
+    <li>Write a program using assignment operators to modify a variable's value.</li>
+    <li>Demonstrate pre-increment and post-increment with an example.</li>
+    <li>Find the maximum of two numbers using a ternary operator.</li>
+  </ul>
+
+  <h3>✅ Multiple Choice Questions (MCQs)</h3>
+  <ul>
+    <li><strong>Which operator is used for logical AND?</strong><br />
+      a) & <br />
+      b) && ✅<br />
+      c) and <br />
+      d) ||
+    </li><br />
+    <li><strong>What is the result of 10 % 3?</strong><br />
+      a) 0 <br />
+      b) 1 ✅<br />
+      c) 3 <br />
+      d) 10
+    </li><br />
+    <li><strong>Which operator is used to assign a value to a variable?</strong><br />
+      a) == <br />
+      b) := <br />
+      c) = ✅<br />
+      d) =>
+    </li><br />
+    <li><strong>What does the expression <code>(5 &gt; 3) ? "Yes" : "No"</code> return?</strong><br />
+      a) Yes ✅<br />
+      b) No <br />
+      c) Error <br />
+      d) null
+    </li><br />
+    <li><strong>Which of the following is a bitwise operator?</strong><br />
+      a) && <br />
+      b) || <br />
+      c) & ✅<br />
+      d) !
+    </li>
+  </ul>
+
+  <div class="animation-box">
+    <p><strong>💡 Fun Fact:</strong> In Java, the ternary operator is the only operator that takes three operands!</p>
+  </div>
+
+</body>
+</html>

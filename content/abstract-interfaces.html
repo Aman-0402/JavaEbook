@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abstract Classes and Interfaces</title>
+</head>
+<body>
+
+  <h2>📗 8. Abstract Classes and Interfaces</h2>
+
+  <h3>🔷 Abstract Class and Methods</h3>
+  <p>An abstract class is a class that cannot be instantiated and is used as a base for other classes. It can contain both abstract (no body) and concrete methods.</p>
+  <div class="code-block">
+    <pre><code>abstract class Animal {
+    abstract void sound();
+    void eat() {
+        System.out.println("Eating...");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Bark");
+    }
+}</code></pre>
+  </div>
+  <ul>
+    <li>Abstract classes can have constructors and variables.</li>
+    <li>They can contain both abstract and non-abstract methods.</li>
+  </ul>
+
+  <h3>🔷 Interface in Java</h3>
+  <p>An interface is a completely abstract class used to group related methods with empty bodies.</p>
+  <div class="code-block">
+    <pre><code>interface Drawable {
+    void draw();
+}
+
+class Circle implements Drawable {
+    public void draw() {
+        System.out.println("Drawing Circle");
+    }
+}</code></pre>
+  </div>
+  <ul>
+    <li>Interfaces support multiple inheritance.</li>
+    <li>All methods are implicitly public and abstract (until Java 7).</li>
+  </ul>
+
+  <h3>🔷 Multiple Inheritance using Interface</h3>
+  <p>Java doesn’t support multiple inheritance with classes but it does through interfaces.</p>
+  <div class="code-block">
+    <pre><code>interface Printable {
+    void print();
+}
+
+interface Showable {
+    void show();
+}
+
+class Demo implements Printable, Showable {
+    public void print() { System.out.println("Printing"); }
+    public void show() { System.out.println("Showing"); }
+}</code></pre>
+  </div>
+
+  <h3>🔷 Functional Interfaces (Java 8)</h3>
+  <p>A functional interface is an interface with exactly one abstract method. They can be used with lambda expressions.</p>
+  <div class="code-block">
+    <pre><code>@FunctionalInterface
+interface Sayable {
+    void say(String msg);
+}
+
+public class LambdaDemo {
+    public static void main(String[] args) {
+        Sayable s = message -> System.out.println("Message: " + message);
+        s.say("Hello!");
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔷 Default and Static Methods in Interface</h3>
+  <p>Introduced in Java 8 to allow method implementation in interfaces.</p>
+  <div class="code-block">
+    <pre><code>interface MyInterface {
+    default void show() {
+        System.out.println("Default Method");
+    }
+
+    static void display() {
+        System.out.println("Static Method");
+    }
+}</code></pre>
+  </div>
+
+  <h3>✍️ Practice Questions</h3>
+  <ul>
+    <li>What is the difference between an abstract class and an interface?</li>
+    <li>Write a Java program using an abstract class and demonstrate its usage.</li>
+    <li>Demonstrate multiple inheritance using interfaces.</li>
+    <li>Write a functional interface and implement it using a lambda expression.</li>
+    <li>What are default and static methods in interfaces? Give examples.</li>
+  </ul>
+
+  <h3>✅ Multiple Choice Questions (MCQs)</h3>
+  <ul>
+    <li><strong>Which of these is true for abstract classes?</strong><br>
+      a) Can be instantiated<br>
+      b) Cannot have constructors<br>
+      c) Cannot contain non-abstract methods<br>
+      d) Cannot be instantiated ✅
+    </li><br>
+    <li><strong>Which keyword is used to create an interface?</strong><br>
+      a) abstract<br>
+      b) interface ✅<br>
+      c) class<br>
+      d) implements
+    </li><br>
+    <li><strong>What is the default access modifier of interface methods?</strong><br>
+      a) private<br>
+      b) protected<br>
+      c) public ✅<br>
+      d) no modifier
+    </li><br>
+    <li><strong>Which version of Java introduced default methods in interfaces?</strong><br>
+      a) Java 6<br>
+      b) Java 7<br>
+      c) Java 8 ✅<br>
+      d) Java 9
+    </li><br>
+    <li><strong>Which annotation is used to define a functional interface?</strong><br>
+      a) @Interface<br>
+      b) @Override<br>
+      c) @Functional ✅<br>
+      d) @FunctionalInterface
+    </li>
+  </ul>
+
+  <div class="animation-box">
+    <p><strong>💡 Tip:</strong> Use abstract classes when you need partial implementation and interfaces when you need total abstraction or multiple inheritance!</p>
+  </div>
+
+</body>
+</html>

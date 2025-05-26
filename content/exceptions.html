@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exception Handling</title>
+</head>
+<body>
+
+  <h2>📗 10. Exception Handling</h2>
+
+  <h3>🔷 What is an Exception?</h3>
+  <p>An exception is an event that disrupts the normal flow of the program. It is an object that is thrown at runtime when an error occurs.</p>
+
+  <h3>🔷 Types of Exceptions</h3>
+  <table>
+    <tr><th>Type</th><th>Description</th></tr>
+    <tr><td>Checked Exceptions</td><td>Checked at compile time (e.g., IOException, SQLException)</td></tr>
+    <tr><td>Unchecked Exceptions</td><td>Checked at runtime (e.g., ArithmeticException, NullPointerException)</td></tr>
+    <tr><td>Error</td><td>Serious problems like JVM crash, out of memory (e.g., StackOverflowError)</td></tr>
+  </table>
+
+  <h3>🔷 try-catch block</h3>
+  <p>The <code>try</code> block contains code that might throw an exception. The <code>catch</code> block handles the exception.</p>
+  <div class="code-block">
+    <pre><code>public class TryCatchExample {
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("Exception caught: " + e);
+        }
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔷 finally block</h3>
+  <p>The <code>finally</code> block always executes whether an exception is caught or not. It is used to release resources like files or database connections.</p>
+  <div class="code-block">
+    <pre><code>try {
+    int[] arr = {1, 2};
+    System.out.println(arr[5]);
+} catch (ArrayIndexOutOfBoundsException e) {
+    System.out.println("Array error: " + e);
+} finally {
+    System.out.println("This block always executes.");
+}</code></pre>
+  </div>
+
+  <h3>🔷 throw and throws</h3>
+  <ul>
+    <li><code>throw</code> is used to explicitly throw an exception.</li>
+    <li><code>throws</code> is used to declare exceptions a method might throw.</li>
+  </ul>
+  <div class="code-block">
+    <pre><code>public class ThrowExample {
+    static void validate(int age) {
+        if(age < 18)
+            throw new ArithmeticException("Not eligible to vote");
+        else
+            System.out.println("Welcome to vote");
+    }
+    public static void main(String[] args) {
+        validate(16);
+    }
+}</code></pre>
+  </div>
+
+  <div class="code-block">
+    <pre><code>import java.io.*;
+
+public class ThrowsExample {
+    void readFile() throws IOException {
+        FileReader fr = new FileReader("file.txt");
+        BufferedReader br = new BufferedReader(fr);
+    }
+}</code></pre>
+  </div>
+
+  <h3>🔷 Custom Exceptions</h3>
+  <p>You can define your own exception classes by extending the <code>Exception</code> class.</p>
+  <div class="code-block">
+    <pre><code>class MyException extends Exception {
+    MyException(String message) {
+        super(message);
+    }
+}
+
+public class CustomEx {
+    public static void main(String[] args) {
+        try {
+            throw new MyException("This is a custom exception!");
+        } catch (MyException e) {
+            System.out.println("Caught: " + e.getMessage());
+        }
+    }
+}</code></pre>
+  </div>
+
+  <h3>✍️ Practice Questions</h3>
+  <ul>
+    <li>What is the difference between checked and unchecked exceptions?</li>
+    <li>Write a program that handles a divide-by-zero exception using try-catch.</li>
+    <li>What is the purpose of the finally block?</li>
+    <li>Explain the use of throw and throws with examples.</li>
+    <li>Write a custom exception for age validation in a voting system.</li>
+  </ul>
+
+  <h3>✅ Multiple Choice Questions (MCQs)</h3>
+  <ul>
+    <li><strong>Which block is always executed?</strong><br>
+      a) try<br>
+      b) catch<br>
+      c) finally ✅<br>
+      d) throw
+    </li><br>
+    <li><strong>Which of these is a checked exception?</strong><br>
+      a) ArithmeticException<br>
+      b) NullPointerException<br>
+      c) IOException ✅<br>
+      d) ArrayIndexOutOfBoundsException
+    </li><br>
+    <li><strong>Which keyword is used to declare an exception in a method signature?</strong><br>
+      a) throw<br>
+      b) try<br>
+      c) catch<br>
+      d) throws ✅
+    </li><br>
+    <li><strong>What happens if an exception is not handled?</strong><br>
+      a) Program continues<br>
+      b) JVM crashes<br>
+      c) Program terminates abruptly ✅<br>
+      d) Nothing happens
+    </li><br>
+    <li><strong>Which class is used to create custom exceptions?</strong><br>
+      a) Throwable<br>
+      b) RuntimeException<br>
+      c) Error<br>
+      d) Exception ✅
+    </li>
+  </ul>
+
+  <div class="animation-box">
+    <p><strong>💡 Fun Fact:</strong> Java’s exception handling mechanism was inspired by similar constructs in earlier languages like C++ but made more structured and safer.</p>
+  </div>
+
+</body>
+</html>
