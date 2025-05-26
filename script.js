@@ -4,7 +4,12 @@ function loadContent(file, event) {
   // Highlight the selected sidebar item
   highlightSelected(event);
 
-  if (file === 'mcq') {
+  // Fix edge case: remove accidental quote break or missing file extension
+  if (!file.endsWith('.html') && file !== 'mcq') {
+    file += '.html';
+  }
+
+  if (file === 'mcq.html' || file === 'mcq') {
     // Dynamically load the MCQ script only once
     if (!document.getElementById('mcq-script')) {
       const script = document.createElement('script');
@@ -23,6 +28,7 @@ function loadContent(file, event) {
       })
       .then(data => {
         content.innerHTML = data;
+        closeSidebarOnMobile(); // Auto-close sidebar on mobile after loading
       })
       .catch(error => {
         content.innerHTML = "<p>Error loading content.</p>";
@@ -31,7 +37,7 @@ function loadContent(file, event) {
   }
 }
 
-// Helper function to highlight selected sidebar item
+// Highlight selected sidebar item
 function highlightSelected(event) {
   const items = document.querySelectorAll('.sidebar li');
   items.forEach(item => item.classList.remove('active'));
@@ -41,3 +47,22 @@ function highlightSelected(event) {
   }
 }
 
+// Sidebar toggle for mobile
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("toggleSidebar");
+  const sidebar = document.querySelector(".sidebar");
+
+  if (toggleBtn && sidebar) {
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+    });
+  }
+});
+
+// Close sidebar after selection (mobile view)
+function closeSidebarOnMobile() {
+  const sidebar = document.querySelector(".sidebar");
+  if (window.innerWidth <= 768 && sidebar.classList.contains("active")) {
+    sidebar.classList.remove("active");
+  }
+}
