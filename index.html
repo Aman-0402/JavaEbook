@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Learn Java - Interactive eBook</title>
   <link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
   <header>
     <h1>Java Programming</h1>
+    <!-- Removed inline onclick -->
+    <button id="toggleSidebar" class="toggle-sidebar">☰ Topics</button>
   </header>
 
   <div class="container">
@@ -34,39 +35,37 @@
         <li onclick="loadContent('java8.html', event)">14. Java 8 Features (Intro)</li>
         <li onclick="loadContent('multithreading.html', event)">15. Multithreading (Basics)</li>
         <li onclick="loadContent('gui-swing.html', event)">16. Basic GUI with Swing (Optional)</li>
-        <li onclick="loadContent('mini-projects.html, event')">17. Mini Projects (Practice)</li>
-        <li onclick="loadContent('mcq', event)">Quiz</li>
+        <li onclick="loadContent('mini-projects.html', event)">17. Mini Projects (Practice)</li>
+        <li onclick="loadContent('mcq.html', event)">Quiz</li>
       </ul>
-      
     </aside>
 
     <main id="content">
-        <h2>📘 Welcome to Java Interactive eBook</h2>
-        <p>
-          Ready to master Java? This interactive guide will help you learn everything from the basics to advanced topics — step by step.
-        </p>
-      
-        <div class="animation-box">
-          <h3>💡 How This Works:</h3>
-          <ul>
-            <li>📂 Click topics on the sidebar to explore content.</li>
-            <li>📄 Learn with explanations, examples, and visuals.</li>
-            <li>🧠 Test your knowledge with quizzes and exercises.</li>
-            <li>🏆 Complete mini-projects to sharpen your skills.</li>
-          </ul>
-        </div>
-      
-        <p>
-          🎯 <strong>Pro Tip:</strong> Bookmark this page or create a study schedule to keep progressing consistently.
-        </p>
-      
-        <div class="animation-box">
-          <p><strong>🔥 Did You Know?</strong> Over 9 million developers use Java worldwide — you're on the path to joining a global community of coders!</p>
-        </div>
-      
-        <p>👈 Start your journey by selecting <strong>"Introduction to Java"</strong> from the sidebar.</p>
-      </main>
-      
+      <h2>📘 Welcome to Java Interactive eBook</h2>
+      <p>
+        Ready to master Java? This interactive guide will help you learn everything from the basics to advanced topics — step by step.
+      </p>
+
+      <div class="animation-box">
+        <h3>💡 How This Works:</h3>
+        <ul>
+          <li>📂 Click topics on the sidebar to explore content.</li>
+          <li>📄 Learn with explanations, examples, and visuals.</li>
+          <li>🧠 Test your knowledge with quizzes and exercises.</li>
+          <li>🏆 Complete mini-projects to sharpen your skills.</li>
+        </ul>
+      </div>
+
+      <p>
+        🎯 <strong>Pro Tip:</strong> Bookmark this page or create a study schedule to keep progressing consistently.
+      </p>
+
+      <div class="animation-box">
+        <p><strong>🔥 Did You Know?</strong> Over 9 million developers use Java worldwide — you're on the path to joining a global community of coders!</p>
+      </div>
+
+      <p>👈 Start your journey by selecting <strong>"Introduction to Java"</strong> from the sidebar.</p>
+    </main>
   </div>
 
   <footer>
